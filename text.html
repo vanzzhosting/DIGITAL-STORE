@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store - Aman & Terpercaya</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* Efek Mengetik */
+        .typing-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            display: inline-block;
+            overflow: hidden; 
+            border-right: .15em solid #38bdf8; 
+            white-space: normal; 
+            margin: 0 auto;
+            letter-spacing: .05em;
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #38bdf8; }
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .refund-info {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            border-left: 4px solid #ef4444;
+            padding-left: 10px;
+            text-align: left;
+        }
+
+        .btn-wa {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-wa:hover {
+            transform: scale(1.05);
+            background-color: #1ebe57;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="typing-container">
+        <p id="typewriter" class="typing-text"></p>
+    </div>
+
+    <div class="refund-info">
+        <p>🛡️ <strong>Jaminan Pelanggan:</strong> Jika pembayaran gagal atau barang tidak sampai, Anda dapat <strong>refund 100% uang kembali</strong> tanpa potongan.</p>
+    </div>
+
+    <a href="https://wa.me/6285931233337" target="_blank" class="btn-wa">
+        💬 CHAT LANGSUNG SEKARANG
+    </a>
+</div>
+
+<script>
+    const text = "Halo, nama saya Digital Store. Menjual semua produk yang murah, aman, dan terpercaya. Pembayaran bisa QRIS yang kalian cari. Ketika anda adalah member pembeli lama, kemungkinan anda akan mendapatkan diskon.";
+    let i = 0;
+    const speed = 50; // Kecepatan mengetik dalam milidetik
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typewriter").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    // Menjalankan fungsi saat halaman dimuat
+    window.onload = typeWriter;
+</script>
+
+</body>
+</html>
